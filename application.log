@@ -735,3 +735,12 @@ com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Java 8 date/time 
 2022-08-07 22:50:31.052  INFO 4636 --- [main] c.example.log.controller.LogController   : {"message":"Error message","type":"JSON","level":"SEVERE","time":null}
 2022-08-07 22:50:31.171  INFO 4636 --- [main] c.example.log.controller.LogController   : {"message":"Error message","type":"JSON","level":"SEVERE","time":null}
 2022-08-07 22:50:31.221  INFO 4636 --- [main] c.example.log.controller.LogController   : Log{message='Error message', type=JSON, level=SEVERE, time=null}
+2022-08-07 23:08:05.518  INFO 16324 --- [main] com.example.log.LogRestControllerTest    : Starting LogRestControllerTest using Java 17.0.3.1 on moleynik-nb with PID 16324 (started by moleynik in C:\Users\moleynik\IdeaProjects\log)
+2022-08-07 23:08:05.521  INFO 16324 --- [main] com.example.log.LogRestControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2022-08-07 23:08:13.126  INFO 16324 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-08-07 23:08:13.129  INFO 16324 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-08-07 23:08:13.139  INFO 16324 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 7 ms
+2022-08-07 23:08:13.339  INFO 16324 --- [main] com.example.log.LogRestControllerTest    : Started LogRestControllerTest in 8.962 seconds (JVM running for 11.411)
+2022-08-07 23:08:13.790  INFO 16324 --- [main] c.example.log.controller.LogController   : {"message":"Error message","type":"JSON","level":"SEVERE","time":null}
+2022-08-07 23:08:13.958  INFO 16324 --- [main] c.example.log.controller.LogController   : {"message":"Error message","type":"JSON","level":"SEVERE","time":null}
+2022-08-07 23:08:14.019  INFO 16324 --- [main] c.example.log.controller.LogController   : Log{message='Error message', type=JSON, level=SEVERE, time=null}

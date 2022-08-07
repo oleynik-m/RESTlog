@@ -40,9 +40,9 @@ public class LogController {
     @PutMapping("/{id}")
     @ResponseStatus(code = HttpStatus.OK, reason = "Updated")
     void update(@RequestBody Log newLog,@PathVariable Long id) throws JsonProcessingException {
-        Log log = this.logService.getById(id).orElseThrow(() -> new LogNotFoundException(String.format("Log id %d not found",id)));
+        this.logService.getById(id).orElseThrow(() -> new LogNotFoundException(String.format("Log id %d not found",id)));
         logger.info(new ObjectMapper().registerModule(new JavaTimeModule()).writeValueAsString(newLog));
-        this.logService.save(log);
+        this.logService.save(newLog);
     }
 
     @DeleteMapping("/{id}")
