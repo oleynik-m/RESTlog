@@ -1,0 +1,37 @@
+version: '3.9'
+
+networks:
+  java:
+    driver: bridge
+
+services:
+    log:
+        image: 'docker-spring-boot:latest'
+        build:
+          context: .
+          dockerfile: Dockerfile
+        ports:
+            - "8080:8080"
+        depends_on:
+            - pg_log
+        networks:
+        - java
+        container_name: log
+        environment:
+          - SPRING_DATASOURCE_URL=jdbc:postgresql://pg_log:5432/log
+          - SPRING_DATASOURCE_USERNAME=postgres
+          - SPRING_DATASOURCE_PASSWORD=P@ssw0rd
+          - SPRING_JPA_GENERATE_DDL=true
+          - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+          - LOGGING_FILE_NAME=application.log
+    pg_log:
+        image: "postgres:latest"
+        ports:
+            - "5433:5432"
+        environment:
+          POSTGRES_USER: "postgres"
+          POSTGRES_PASSWORD: "P@ssw0rd"
+          POSTGRES_DB: "log"       
+        networks:
+        - java
+        container_name: pg_log
